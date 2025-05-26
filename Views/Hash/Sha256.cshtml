@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "SHA256 Hash Hesapla";
+}
+
+<div class="container mt-5">
+    <h2 class="mb-4">🔎 SHA256 Hash Hesapla</h2>
+    <form method="post" asp-action="Sha256" asp-controller="Hash">
+        <div class="mb-3">
+            <label for="inputText" class="form-label">Metin</label>
+            <input type="text" class="form-control" id="inputText" name="input" placeholder="Metin giriniz..." required
+                   value="@ViewBag.InputText" />
+        </div>
+        <button type="submit" class="btn btn-primary">Hash Hesapla</button>
+    </form>
+    @if (ViewBag.HashResult != null)
+    {
+        <div class="mt-4">
+            <label class="form-label">SHA256 Hash Sonucu</label>
+            <textarea class="form-control" rows="3" readonly>@ViewBag.HashResult</textarea>
+        </div>
+    }
+</div>

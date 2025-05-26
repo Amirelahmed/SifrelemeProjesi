@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "RSA Şifrele";
+}
+
+<div class="container mt-5">
+    <div class="card mb-4 p-3 shadow-sm rounded">
+        <h4 class="text-primary text-center mb-3">🔐 RSA Anahtar Üretici</h4>
+        <div class="mb-2">
+            <label class="form-label">Public Key:</label>
+            <div class="position-relative">
+                <textarea class="form-control" id="publicKeyDisplay" rows="4" readonly>@ViewBag.PublicKey</textarea>
+                <div class="position-absolute top-0 end-0 me-4 m-2 d-flex gap-1">
+                    <a href="javascript:void(0)" onclick="downloadText('publicKeyDisplay', 'public_key.pem')" class="btn btn-sm btn-light" title="İndir">
+                        <i class="bi bi-download"></i>
+                    </a>
+                    <button type="button" class="btn btn-sm btn-light" onclick="copyToClipboard('publicKeyDisplay')" title="Kopyala">
+                        <i class="bi bi-clipboard"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-light" onclick="expandTextarea('publicKeyDisplay')" title="Genişlet">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Private Key:</label>
+            <div class="position-relative">
+                <textarea class="form-control" id="privateKeyDisplay" rows="4" readonly>@ViewBag.PrivateKey</textarea>
+                <div class="position-absolute top-0 end-0 me-4 m-2 d-flex gap-1">
+                    <a href="javascript:void(0)" onclick="downloadText('privateKeyDisplay', 'private_key.pem')" class="btn btn-sm btn-light" title="İndir">
+                        <i class="bi bi-download"></i>
+                    </a>
+                    <button type="button" class="btn btn-sm btn-light" onclick="copyToClipboard('privateKeyDisplay')" title="Kopyala">
+                        <i class="bi bi-clipboard"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-light" onclick="expandTextarea('privateKeyDisplay')" title="Genişlet">
+                        <i class="bi bi-arrows-fullscreen"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <form method="post" asp-controller="Rsa" asp-action="GenerateKeys">
+            <button type="submit" class="btn btn-custom-generate w-100">🔁 Anahtarları Üret</button>
+        </form>
+    </div>
+
+    <h2 class="mb-4">🔏 RSA Şifrele</h2>
+    <form method="post" asp-action="Encrypt" asp-controller="Rsa">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <label for="plainText" class="form-label">Şifrelenecek Metin</label>
+                <input type="text" class="form-control mb-2" id="plainText" name="plainText" required
+                       value="@ViewBag.InputPlainText" placeholder="Metin giriniz..." />
+                <button type="submit" class="btn btn-custom-generate w-100">Şifrele</button>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="publicKey" class="form-label">Public Key</label>
+                <textarea class="form-control" id="publicKey" name="publicKey" rows="6" required>@ViewBag.PublicKey</textarea>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Şifrelenmiş Metin</label>
+                <div class="position-relative">
+                    <textarea class="form-control" id="encryptedText" rows="6" readonly>@ViewBag.EncryptedText</textarea>
+                    <div class="position-absolute top-0 end-0 me-4 m-2 d-flex gap-1">
+                        <button type="button" class="btn btn-sm btn-light" onclick="copyToClipboard('encryptedText')" title="Kopyala">
+                            <i class="bi bi-clipboard"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+@section Scripts 
+{
+    <script>
+        function copyToClipboard(id) {
+            const el = document.getElementById(id);
+            el.select();
+            el.setSelectionRange(0, 99999);
+            document.execCommand("copy");
+        }
+
+        function downloadText(id, filename) {
+            const text = document.getElementById(id).value;
+            const blob = new Blob([text], { type: "text/plain" });
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            a.click();
+        }
+
+        function expandTextarea(id) {
+            const el = document.getElementById(id);
+            el.rows = el.rows === 4 ? 12 : 4;
+        }
+    </script>
+}
