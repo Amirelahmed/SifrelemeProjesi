@@ -20,27 +20,26 @@
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="btn btn-custom-gray text-white me-2 @(ViewContext.RouteData.Values["controller"]?.ToString() == "Rsa" && ViewContext.RouteData.Values["action"]?.ToString() == "Encrypt" ? "border border-3 border-light" : "")"
+                            <a class="btn btn-rsa-encrypt text-white me-2 @(ViewContext.RouteData.Values["controller"]?.ToString() == "Rsa" && ViewContext.RouteData.Values["action"]?.ToString() == "Encrypt" ? "border border-3 border-light" : "")"
                                href="/Rsa/Encrypt">
                                 🔏 RSA Şifrele
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-custom-gray text-white me-2 @(ViewContext.RouteData.Values["controller"]?.ToString() == "Rsa" && ViewContext.RouteData.Values["action"]?.ToString() == "Decrypt" ? "border border-3 border-light" : "")"
+                            <a class="btn btn-rsa-decrypt text-white me-2 @(ViewContext.RouteData.Values["controller"]?.ToString() == "Rsa" && ViewContext.RouteData.Values["action"]?.ToString() == "Decrypt" ? "border border-3 border-light" : "")"
                                href="/Rsa/Decrypt">
                                 🔓 RSA Çöz
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-custom-gray text-white @(ViewContext.RouteData.Values["controller"]?.ToString() == "Hash" && ViewContext.RouteData.Values["action"]?.ToString() == "Sha256" ? "border border-3 border-light" : "")"
+                            <a class="btn btn-sha256-hash text-white @(ViewContext.RouteData.Values["controller"]?.ToString() == "Hash" && ViewContext.RouteData.Values["action"]?.ToString() == "Sha256" ? "border border-3 border-light" : "")"
                                href="/Hash/Sha256">
                                 🔎 SHA256 Hash
                             </a>
                         </li>
                     </ul>
-
                 </div>
-            </div>
+
         </nav>
     </header>
     <div class="container">

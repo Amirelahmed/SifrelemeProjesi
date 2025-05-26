@@ -45,7 +45,6 @@ namespace Sifreleme.Helpers
             var bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(rawData));
             return BitConverter.ToString(bytes).Replace("-", "").ToLowerInvariant();
         }
-        //------------------------------------------------------
     }
 
 }

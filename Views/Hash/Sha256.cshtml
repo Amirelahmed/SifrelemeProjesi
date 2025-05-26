@@ -1,22 +1,79 @@
 ﻿@{
     ViewData["Title"] = "SHA256 Hash Hesapla";
+    bool isFileMode = ViewBag.IsFileMode != null && (bool)ViewBag.IsFileMode;
+    string inputText = ViewBag.InputText as string;
+    string hashResult = ViewBag.HashResult as string;
 }
 
 <div class="container mt-5">
-    <h2 class="mb-4">🔎 SHA256 Hash Hesapla</h2>
-    <form method="post" asp-action="Sha256" asp-controller="Hash">
-        <div class="mb-3">
-            <label for="inputText" class="form-label">Metin</label>
-            <input type="text" class="form-control" id="inputText" name="input" placeholder="Metin giriniz..." required
-                   value="@ViewBag.InputText" />
+    <h2 class="mb-4">🔐 SHA256 Hash Hesapla</h2>
+
+    <div class="btn-group d-flex mb-4" role="group">
+        <button type="button" id="textBtn" class="btn w-50 @(isFileMode ? "btn-orange-outline" : "btn-orange active")" onclick="showText()">Metin</button>
+        <button type="button" id="fileBtn" class="btn w-50 @(isFileMode ? "btn-orange active" : "btn-orange-outline")" onclick="showFile()">Dosya</button>
+    </div>
+
+    <form method="post" asp-action="Sha256" asp-controller="Hash" enctype="multipart/form-data">
+        <div class="mb-3 @(isFileMode ? "d-none" : "")" id="textInputGroup">
+            <label for="inputText" class="form-label text-white">Metin</label>
+            <input type="text" class="form-control" id="inputText" name="input" placeholder="Metin giriniz..." value="@inputText" />
         </div>
-        <button type="submit" class="btn btn-primary">Hash Hesapla</button>
+
+        <div class="mb-3 @(isFileMode ? "" : "d-none")" id="fileInputGroup">
+            <label for="file" class="form-label text-white">Dosya Seç</label>
+            <input type="file" class="form-control" id="file" name="file" />
+        </div>
+
+        <button type="submit" class="btn btn-orange">Hash Hesapla</button>
     </form>
-    @if (ViewBag.HashResult != null)
+
+    @if (!string.IsNullOrEmpty(hashResult))
     {
-        <div class="mt-4">
+        <div class="mt-4" id="hashResultContainer">
             <label class="form-label">SHA256 Hash Sonucu</label>
-            <textarea class="form-control" rows="3" readonly>@ViewBag.HashResult</textarea>
+            <textarea class="form-control" rows="3" readonly>@hashResult</textarea>
         </div>
     }
 </div>
+
+@section Scripts {
+    <script>
+        const textGroup = document.getElementById("textInputGroup");
+        const fileGroup = document.getElementById("fileInputGroup");
+
+        function showText() {
+            textGroup.classList.remove("d-none");
+            fileGroup.classList.add("d-none");
+
+            document.getElementById("textBtn").classList.add("btn-orange", "active");
+            document.getElementById("textBtn").classList.remove("btn-orange-outline");
+
+            document.getElementById("fileBtn").classList.remove("btn-orange", "active");
+            document.getElementById("fileBtn").classList.add("btn-orange-outline");
+
+            document.getElementById("file").value = "";
+        }
+
+        function showFile() {
+            textGroup.classList.add("d-none");
+            fileGroup.classList.remove("d-none");
+
+            document.getElementById("fileBtn").classList.add("btn-orange", "active");
+            document.getElementById("fileBtn").classList.remove("btn-orange-outline");
+
+            document.getElementById("textBtn").classList.remove("btn-orange", "active");
+            document.getElementById("textBtn").classList.add("btn-orange-outline");
+
+            document.getElementById("inputText").value = "";
+        }
+
+        window.addEventListener("load", function () {
+            const isFileMode = "@isFileMode" === "True";
+            if (isFileMode) {
+                showFile();
+            } else {
+                showText();
+            }
+        });
+    </script>
+}

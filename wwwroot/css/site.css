@@ -1,4 +1,4 @@
-html {
+﻿html {
     font-size: 14px;
 }
 
@@ -105,4 +105,114 @@ input[readonly] {
 
     .btn-custom-generate:hover {
         background-color: #2e07b3 !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-rsa-encrypt {
+    background-color: #007bff; /* Mavi */
+    color: white;
+}
+
+    .btn-rsa-encrypt:hover {
+        background-color: #0056b3;
+        color: white;
+    }
+
+.btn-rsa-decrypt {
+    background-color: #28a745; /* Yeşil */
+    color: white;
+}
+
+    .btn-rsa-decrypt:hover {
+        background-color: #1e7e34;
+        color: white;
+    }
+
+.btn-sha256-hash {
+    background-color: #fd7e14; /* Turuncu */
+    color: white;
+}
+
+    .btn-sha256-hash:hover {
+        background-color: #e8590c;
+        color: white;
+    }
+
+
+.btn-rsa-encrypt {
+    background-color: #007bff; /* Mavi */
+    color: white;
+}
+
+    .btn-rsa-encrypt:hover {
+        background-color: #0056b3;
+        color: white;
+    }
+.btn-rsa-decrypt {
+    background-color: #28a745; 
+    color: white;
+}
+
+    .btn-rsa-decrypt:hover {
+        background-color: #1e7e34;
+        color: white;
+    }
+
+.btn-sha256-hash {
+    background-color: #fd7e14; 
+    color: white;
+}
+
+
+
+
+
+
+    .btn-sha256-hash:hover {
+        background-color: #e8590c;
+        color: white;
+    }
+
+.btn-green {
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+
+    .btn-green:hover {
+        background-color: #218838;
+        color: white;
+    }
+
+.btn-orange {
+    background-color: #fd7e14;
+    color: white;
+    border: none;
+}
+
+    .btn-orange:hover {
+        background-color: #e96d09;
+        color: white;
+    }
+
+.btn-orange-outline {
+    background-color: transparent;
+    border: 2px solid #fd7e14;
+    color: #fd7e14;
+}
+
+    .btn-orange-outline:hover {
+        background-color: #fd7e14;
+        color: white;
     }
