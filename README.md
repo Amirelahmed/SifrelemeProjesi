@@ -19,13 +19,13 @@ RSA şifreleme, RSA çözme ve SHA256 hash işlemleri için ilgili sayfalara yö
 
 ![image alt](https://github.com/user-attachments/assets/cf6e6e80-392d-46a9-8e2f-3570bdc4d02d)
 
-bu sayfada metin verilerini girerek RSA algoritması ile şifreleyebilirler. Şifreleme işlemi sonucunda, şifrelenmiş metin kullanıcıya sunulur. Ayrıca, kullanılan açık anahtar bilgisi de görüntülenebilir.
+Yukardaki metin verilerini girerek RSA algoritması ile şifreleyebilirler. Şifreleme işlemi sonucunda, şifrelenmiş metin kullanıcıya sunulur. Ayrıca, kullanılan açık anahtar bilgisi de görüntülenebilir.
 
 3. RSA Çözme Sayfası
 
 ![image alt](https://github.com/user-attachments/assets/21e709c6-3105-4fe7-b386-6faf04c5ebbb)
 
-Bu sayfa, RSA ile şifrelenmiş verilerin çözülmesini sağlar. Kullanıcı, şifrelenmiş metni ve ilgili özel anahtarı girerek orijinal veriye ulaşabilir.
+Yukardaki, RSA ile şifrelenmiş verilerin çözülmesini sağlar. Kullanıcı, şifrelenmiş metni ve ilgili özel anahtarı girerek orijinal veriye ulaşabilir.
 
 4. SHA256 Hash Sayfası
 
@@ -35,7 +35,7 @@ SHA256 algoritması ile metin verisinin hash değeri oluşturulur. Bu hash, paro
 
 ![image alt](https://github.com/user-attachments/assets/37c9e897-625e-4f1f-88e9-eafc0f41058c)
 
-Bu sayfa, kullanıcıların bilgisayarlarından bir dosya seçerek SHA256 hash değerini oluşturmalarını sağlar. Dosya bütünlüğünü kontrol etmek için kullanışlıdır.
+Yukardaki, kullanıcıların bilgisayarlarından bir dosya seçerek SHA256 hash değerini oluşturmalarını sağlar. Dosya bütünlüğünü kontrol etmek için kullanışlıdır.
 
 6. Dosya Şifreleme SHA256 Hash
 
@@ -47,5 +47,28 @@ Kullanıcılar, seçtikleri dosyaların SHA256 hash değerini oluşturabilirler.
 
 ![image alt](https://github.com/user-attachments/assets/f1291c95-e117-41a5-9806-c9bb687b8eb7)
 
-Bu sayfa, kullanıcıların düz metin verilerini SHA256 algoritması ile hash’lemesini sağlar. Kullanıcı metni girdikten sonra sistem, SHA256 algoritmasını çalıştırarak bu metne karşılık gelen sabit uzunlukta hash değeri üretir. Bu özellik genellikle parola gibi hassas bilgileri geri döndürülemez bir biçimde güvenli şekilde saklamak amacıyla kullanılır.
+Yukardaki, kullanıcıların düz metin verilerini SHA256 algoritması ile hash’lemesini sağlar. Kullanıcı metni girdikten sonra sistem, SHA256 algoritmasını çalıştırarak bu metne karşılık gelen sabit uzunlukta hash değeri üretir. Bu özellik genellikle parola gibi hassas bilgileri geri döndürülemez bir biçimde güvenli şekilde saklamak amacıyla kullanılır.
 
+⚙️ Özellikler
+🛡️ RSA Şifreleme ve Çözme: Metin verilerini RSA algoritması ile şifreleme ve çözme işlemleri.
+
+🔐 SHA256 Hash Oluşturma: Metin ve dosya verileri için SHA256 hash değeri oluşturma.
+
+📄 Dosya İşlemleri: Kullanıcıların dosya seçerek hash değerlerini oluşturabilmeleri.
+
+🎨 Kullanıcı Dostu Arayüz: Basit ve anlaşılır bir kullanıcı arayüzü ile kolay kullanım.
+
+🌐 Canlı Demo: Uygulamanın canlı demosuna erişim imkanı.
+
+💻 Kullanılan Teknolojiler
+ASP.NET Core MVC 8: Web uygulaması geliştirme framework'ü.
+
+C#: Uygulama geliştirme dili.
+
+RSA Algoritması: Asimetrik şifreleme yöntemi.
+
+SHA256 Algoritması: Tek yönlü hash algoritması.
+
+HTML/CSS/JavaScript: Ön yüz tasarımı ve etkileşimleri.
+
+Somee.com: Uygulamanın barındırıldığı platform.
