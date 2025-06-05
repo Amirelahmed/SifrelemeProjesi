@@ -14,7 +14,16 @@ RSA Çözme Sayfası
 
 SHA256 Hash Sayfası
 
-![image alt](https://github.com/Amirelahmed/SifrelemeProjesi/blob/f658e5440a7d99ea2c9fd6b9dde8e779d6cbd7ef/image/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-05-25%20015437.png)
+Dosya Seçme SHA256 Hash
+
+![image alt](https://github.com/user-attachments/assets/37c9e897-625e-4f1f-88e9-eafc0f41058c)
 
 
+Dosya Şifreleme SHA256 Hash
+![image alt](https://github.com/user-attachments/assets/8d487021-6f40-4396-8726-0b82ad5228bd)
+
+
+Metin Şifreleme SHA256 Hash
+
+![image alt](https://github.com/user-attachments/assets/f1291c95-e117-41a5-9806-c9bb687b8eb7)
 
