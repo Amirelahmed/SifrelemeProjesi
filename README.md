@@ -5,7 +5,7 @@ SifrelemeProjesi, ASP.NET Core MVC 8 framework'ü kullanılarak geliştirilmiş 
 
 .SHA256 (Secure Hash Algorithm 256-bit): Tek yönlü bir hash algoritmasıdır. Verilerin sabit uzunlukta bir özetini oluşturur. Bu özet, veri bütünlüğünü kontrol etmek veya parolaları güvenli bir şekilde saklamak için kullanılır.
 
-Uygulama, kullanıcı dostu bir arayüz ile bu işlemleri gerçekleştirmeyi sağlar. Ayrıca, projenin canlı demosuna buradan ulaşabilirsiniz.
+Uygulama, kullanıcı dostu bir arayüz ile bu işlemleri gerçekleştirmeyi sağlar. Ayrıca, projenin canlı demosuna [buradan](http://publishsifreleme.somee.com/) ulaşabilirsiniz.
 
 🖼️ Kullanıcı Arayüzü Görselleri ve Açıklamaları
 
